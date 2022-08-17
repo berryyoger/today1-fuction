@@ -20,17 +20,7 @@ function Y32() {
         {name: "정욱",
          birth: "2004.03.31"}
     ]);
-
-    const [vase, setVase] = useState(vases.map((info) => (<Vase name={info.name} date={info.birth} />)))
     
-    const addVase = () =>{
-        vases.push(
-            {name: "정욱",
-             birth: "2004.03.31"}
-        )
-        setVase(vases.map((info) => (<Vase name={info.name} date={info.birth} />)))
-        console.log(vases)
-    }
     return (
         <div className="Y32">
             <div className="background32">
@@ -48,7 +38,7 @@ function Y32() {
                         <img className="flower325"></img>
                     </div>
                     <p className="username32">오로라</p>
-                    <button className="addVaseBtn32" onClick={addVase}>꽃병추가</button>
+                    <button className="addVaseBtn32">꽃병추가</button>
                     <div className="container32">
                         <div className='vaseGroup'>
                             <div className="box32">
@@ -61,7 +51,7 @@ function Y32() {
                                     <img className="deleteBtnImg32"></img>
                                 </div>
                             </div>
-                            {vase}
+                            {vases.map((info) => (<Vase name={info.name} date={info.birth} />))}
                         </div>
                         <div className="line322"></div>
                         <div className="bottomBtnContainer32">
